@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.center-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s !important;
+  box-shadow: none !important;
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px)
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 2px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 0.2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #11244b;
+    cursor: pointer;
+  }
+}
