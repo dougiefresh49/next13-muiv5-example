@@ -1,5 +1,5 @@
 import React from "react";
-import EmotionProvider from "./EmotionProvider";
+import { NextAppDirEmotionCacheProvider } from "tss-react/next/appDir";
 import ThemeProvider from "./ThemeProvider";
 
 type AppProviderProps = {
@@ -9,9 +9,9 @@ type AppProviderProps = {
 const AppProvider = (props: AppProviderProps) => {
   const { children } = props;
   return (
-    <EmotionProvider>
+    <NextAppDirEmotionCacheProvider options={{ key: "css" }}>
       <ThemeProvider>{children}</ThemeProvider>
-    </EmotionProvider>
+    </NextAppDirEmotionCacheProvider>
   );
 };
 

@@ -1,34 +1,5 @@
 import { Breakpoint } from "@mui/material";
-import { DARK_THEME_MEDIA_SYSTEM } from "constant";
-import { AppearanceType, BreakpointsOptions } from "constant/enum";
-import { clientStorage } from "./storage";
-
-export const getTheme = (
-  key: string,
-  fallback: AppearanceType,
-): AppearanceType => {
-  if (typeof window === "undefined") return fallback;
-  try {
-    const theme =
-      (clientStorage.get(key) as AppearanceType) || getThemeSystem();
-    return theme || fallback;
-  } catch (error) {
-    // Unsupported
-    console.error(error);
-  }
-  return fallback;
-};
-
-export const getThemeSystem = (e?: MediaQueryList): AppearanceType => {
-  if (!e) {
-    e = window.matchMedia(DARK_THEME_MEDIA_SYSTEM);
-  }
-
-  const isDark = e.matches;
-
-  const themeSystem = isDark ? AppearanceType.DARK : AppearanceType.LIGHT;
-  return themeSystem;
-};
+import { BreakpointsOptions } from "constant/enum";
 
 export const parseJSON = (
   data: string | undefined,
