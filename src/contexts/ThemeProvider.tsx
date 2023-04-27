@@ -23,6 +23,7 @@ const theme = extendTheme({
 
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { children } = props;
+  // Docs: https://mui.com/material-ui/experimental-api/css-variables/#server-side-rendering
   getInitColorSchemeScript({
     defaultMode: DEFAULT_MODE,
   });
